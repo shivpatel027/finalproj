@@ -6,7 +6,7 @@ var logger = require('morgan')
 var path = require('path')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-var db = require('./database')
+var db = require('./config/database')
 var app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -27,11 +27,18 @@ app.use(flash())
 app.get('/', function (req, res, next) {
   res.render('index', { title: 'User Form' })
 })
+
+//Route
+var dataRoute = require('./routes/data')
+
+//route use 
+app.use('/data', dataRoute)
+
 app.post('/user_form', function (req, res, next) {
   var CAP = req.body.CAP
   var MAXLOAD = req.body.MAXLOAD
   var GEN = req.body.GEN
-  var sql = `INSERT INTO demo (CAP, MAXLOAD, GEN, DATE) VALUES ("${CAP}", "${MAXLOAD}", "${GEN}", CURDATE())`
+  var sql = `INSERT INTO sample_data (CAP, MAXLOAD, GEN, DATE) VALUES ("${CAP}", "${MAXLOAD}", "${GEN}", CURDATE())`
   db.query(sql, function (err, result) {
     if (err) throw err
     console.log('Row has been updated')
