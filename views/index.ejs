@@ -15,33 +15,23 @@
       <p class="alert alert-success mb-3"><%- messages.success %></p>
       <% } %>
       <form action="user_form" method="POST">
+        <div class="mb-2"></div>
         <div class="mb-2">
+          CAP(MAX): <input type="text" id="name" placeholder="CAP" name="CAP" />
         </div>
         <div class="mb-2">
-          CAP(MAX): <input
-            type="text"
-            id="name"
-            placeholder="CAP"
-            name="CAP"
-          />
+          MAX LOAD:
+          <input type="text" id="name" placeholder="MAXLOAD" name="MAXLOAD" />
         </div>
         <div class="mb-2">
-          MAX LOAD: <input
-            type="text"
-            id="name"
-            placeholder="MAXLOAD"
-            name="MAXLOAD"
-          />
-        </div>
-        <div class="mb-2">
-          GEN: <input
-            type="text"
-            id="name"
-            placeholder="GEN"
-            name="GEN"
-          />
+          GEN: <input type="text" id="name" placeholder="GEN" name="GEN" />
         </div>
         <button type="submit" class="btn btn-dark">Store</button>
+        <br>
+      </form>
+      <br>
+      <form action="sample_data">
+        <button href="./data.ejs" class="btn btn-dark">Data Table</button>
       </form>
     </div>
   </body>

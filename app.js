@@ -28,11 +28,12 @@ app.get('/', function (req, res, next) {
   res.render('index', { title: 'User Form' })
 })
 
+
 //Route
 var dataRoute = require('./routes/data')
 
 //route use 
-app.use('/data', dataRoute)
+app.use('/sample_data', dataRoute)
 
 app.post('/user_form', function (req, res, next) {
   var CAP = req.body.CAP
@@ -46,6 +47,8 @@ app.post('/user_form', function (req, res, next) {
     res.redirect('/')
   })
 })
+
+
 app.use(function (req, res, next) {
   next(createError(404))
 })
