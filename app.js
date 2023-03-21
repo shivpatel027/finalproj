@@ -33,7 +33,7 @@ app.get('/', function (req, res, next) {
 var dataRoute = require('./routes/data')
 
 //route use 
-app.use('/sample_data', dataRoute)
+app.use('/export', dataRoute)
 
 app.post('/user_form', function (req, res, next) {
   var CAP = req.body.CAP
@@ -58,7 +58,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error')
 })
-app.listen(5555, function () {
-  console.log('Node server is running on port : 5555')
+app.listen(6000, function () {
+  console.log('Node server is running on port : 6000')
 })
 module.exports = app
