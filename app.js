@@ -37,9 +37,25 @@ app.use('/export', dataRoute)
 
 app.post('/user_form', function (req, res, next) {
   var CAP = req.body.CAP
-  var MAXLOAD = req.body.MAXLOAD
+  var ML = req.body.ML
   var GEN = req.body.GEN
-  var sql = `INSERT INTO sample_data (CAP, MAXLOAD, GEN, DATE) VALUES ("${CAP}", "${MAXLOAD}", "${GEN}", CURDATE())`
+  var ACM = req.body.ACM
+  var PS = req.body.PS 
+  var ACP = req.body.ACP
+  var GM = req.body.GM
+  var GP = req.body.GP
+  var PS = req.body.PS
+  var TACM = req.body.TACM
+  var TACP = req.body.TACP
+  var USOM = req.body.USOM
+  var PLF = req.body.PLF
+  var CCM = req.body.CCM
+  var CCA = req.body.CCA 
+  var RCO = req.body.RCO
+  var RCV = req.body.RCV
+  var LC = req.body.LC
+  var CC = req.body.CC
+  var sql = `INSERT INTO final_data (POWER_STATION, date, CAP, MAX_LOAD, AUX_CONS, AUX_CONS_PR, GTLOSS, GTLOSS_PR, TOTAL_AUX_CONS_PR, UNIT_SENT_OUT, PLF, COAL_CONS, COAL_CV, RFO_CONS, RFO_CV, LDO_CV, COAL_CV_AR) VALUES ("${PS}", CURDATE(), "${CAP}", "${ML}", "${ACM}", "${ACP}", "${GM}", "${GP}", "${TACP}", "${USOM}", "${PLF}", "${CCM}", "${CCA}", "${RCO}", "${RCV}", "${LC}", "${CC}")`
   db.query(sql, function (err, result) {
     if (err) throw err
     console.log('Row has been updated')
@@ -58,7 +74,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error')
 })
-app.listen(6000, function () {
-  console.log('Node server is running on port : 6000')
-})
+
 module.exports = app

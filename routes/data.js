@@ -13,7 +13,7 @@ var data_exporter = require('json2csv').Parser;
 
 router.get('/export', function(request, response, next){
 
-    database.query('SELECT * FROM sample_data', function(error, data){
+    database.query('SELECT * FROM final_data', function(error, data){
 
         var mysql_data = JSON.parse(JSON.stringify(data));
 

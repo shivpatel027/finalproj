@@ -6,3 +6,69 @@ body {
 a {
   color: #00B7FF;
 }
+
+h3{
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: solid;
+  font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.Form-main{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding: 10px 0 90px;
+  
+
+}
+.Form-submain{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  height: 1200px;
+  width:35%;
+  box-shadow: 10px 10px 10px 10px rgb(207, 207, 207);
+  padding-top: 30px;
+  border-radius: 30px;
+  background-color: white;
+}
+.Form-image{
+  padding-top: 20px;
+  justify-content: center;
+  display: flex;
+
+}
+.Form-container-image{
+
+  border-radius: 20px;
+ align-items: center;
+  display: flex;
+  height: 150px;
+  width: 150px;
+}
+.Form-profile{
+  height: 150px;
+  width: 150px;
+  border-radius: 120px;
+}
+input{
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  /*border: none;*/
+  border-radius: 5px;
+  
+}
+.label{
+  /*margin-right: 0px;*/
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 0.4cm;
+  padding-top:15px;
+  
+
+
+}
+.button1{
+  align-items:center;
+  margin-top: 20px;
+}

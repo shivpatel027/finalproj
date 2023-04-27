@@ -1,0 +1,26 @@
+var CAP = req.body.CAP
+  var ML = req.body.ML
+  var GEN = req.body.GEN
+  var ACM = req.body.ACM
+  var PS = req.body.PS 
+  var ACP = req.body.ACP
+  var GM = req.body.GM
+  var GP = req.body.GP
+  var GEN = req.body.GEN
+  var TACM = req.body.TACM
+  var TAPC = req.body.TAPC
+  var USOM = req.body.USOM
+  var PLF = req.body.PLF
+  var CCM = req.body.CCM
+  var CCA = req.body.CCA 
+  var RCO = req.body.RCO
+  var RCV = req.body.RCV
+  var LC = req.body.LC
+  var CC = req.body.CC
+  var sql = `INSERT INTO final_data (POWER_STATION, DATE, CAP, MAX_LOAD, GEN, AUX_CONS, AUX_CONS_PR, GTLOSS, GTLOSS_PR, TOTAL_AUX_CONS, TOTAL_AUX_CONS_PR, UNIT_SENT_OUT, PLF, COAL_CONS, COAL_CV, RFO_CONS, RFO_CV, LDO_CV, COAL_CV_CR) VALUES (${PS}, "CURDATE(), ${CAP}", "${ML}", "${GEN}", "${ACM}", "${ACP}", "${GM}", "${GP}", "${TACM}", "${TAPC}", "${USOM}", "${PLF}", "${CCM}", "${CCA}", "${RCO}", "${RCV}", "${LC}", "${CC}")`
+
+
+  var CAP = req.body.CAP
+  var MAXLOAD = req.body.MAXLOAD
+  var GEN = req.body.GEN
+  var sql = `INSERT INTO sample_data (CAP, MAXLOAD, GEN, DATE) VALUES ("${CAP}", "${MAXLOAD}", "${GEN}", CURDATE())`
